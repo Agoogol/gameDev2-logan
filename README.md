@@ -1,4 +1,4 @@
 # gameDev2-logan
 
 
-https://agoogol.github.io/gameDev2-logan/public/
+https://agoogol.github.io/gameDev2-logan/Public/
