@@ -1,0 +1,28 @@
+<h1 align=center>t3a11-objects-logan</h1>
+
+<input id="myText01" type=text value="logan">
+
+<input type="button" value="Show Object" onclick="{
+
+  myObject = { 
+	'myName' : document.getElementById('myText01').value, 
+	'myHairColor' : 'brown',
+	'myNumber' : '7',
+}
+
+  document.getElementById('myDiv01').innerHTML = myObject.myNumber + ' name : ' + myObject.myName
+
+}">
+
+<div id="myDiv01">...</div>
+
+let myArrayofObjects = [{x:30, y:20},
+	{'name':'logan','lastName':'thorsen'},
+	{'eyeColour':'brown','hairColour':'brown'}]
+
+let myObjectofArrays = {'x':[4,7,8],
+	'y':[5,8,9]}
+
+myArrayofObjects[2].eyeColour
+
+myObjectofArrays.y[1]
