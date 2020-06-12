@@ -9,6 +9,10 @@
    let myScore = 10
    let myGun01
    let myGun02
+   let myGun03
+   let myGun04
+   let myGun05
+   let myGun06
    let myShooting = 1
 
    // global functions here
@@ -60,7 +64,34 @@ function myCheckHit(){
       myScore += 1
    }   
    
+   if ( myHitOther('myBullet03','myImg03') ){
+      clearInterval(myGun03)
+      document.getElementById('myBullet03').style.left = '-200px'
+      document.all.myText01.value = 'You shot myImg03'  
+      myScore += 1
+   }   
 
+   if ( myHitOther('myBullet04','myImg03') ){
+      clearInterval(myGun04)
+      document.getElementById('myBullet04').style.left = '-200px'
+      document.all.myText01.value = 'You shot myImg03'  
+      myScore += 1
+   }   
+   
+   if ( myHitOther('myBullet05','myImg03') ){
+      clearInterval(myGun05)
+      document.getElementById('myBullet05').style.left = '-200px'
+      document.all.myText01.value = 'You shot myImg03'  
+      myScore += 1
+   }   
+
+   if ( myHitOther('myBullet06','myImg06') ){
+      clearInterval(myGun06)
+      document.getElementById('myBullet06').style.left = '-200px'
+      document.all.myText01.value = 'You shot myImg03'  
+      myScore += 1
+   }   
+         
    
   // you LOSE refresh the page
    if (myScore <= 0){
@@ -75,7 +106,7 @@ function myCheckHit(){
       document.all.myText01.value = 'You hit myImg04 and you win the game!'  
        alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
-      location = 'https://www.google.ca'
+      location = 'https://google.ca'
    }
 
    // more if statements here
@@ -98,6 +129,14 @@ function myCheckHit(){
 
    if (event.key == 's') {   // s = go down
       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
+   }  
+
+   if (event.key == 'w') {   // w = go up
+      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
+   }  
+
+   if (event.key == 'a') {   // a = go left
+      document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 + 'px'
    }  
 
    // put more here
@@ -141,8 +180,58 @@ function myCheckHit(){
 
 <input type=button value="shoot" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
 
-if (myShooting > 2 ){myShooting = 1}
+if (myShooting > 6 ){myShooting = 1}
 
+  // Bullet Number 6
+if (myShooting == 6){
+  myShooting += 1
+  document.getElementById('myBullet02').style.left = document.getElementById('myImg01').style.left
+  document.getElementById('myBullet02').style.top  = document.getElementById('myImg01').style.top
+  clearInterval(myGun02)
+  myGun02 = setInterval(function(){
+     document.getElementById('myBullet02').style.left = parseInt(document.getElementById('myBullet02').style.left) + 10 + 'px'
+     myCheckHit() 
+  }, 20)   // speed of bullet faster lower number
+}
+
+
+  // Bullet Number 5
+if (myShooting == 5){
+  myShooting += 1
+  document.getElementById('myBullet02').style.left = document.getElementById('myImg01').style.left
+  document.getElementById('myBullet02').style.top  = document.getElementById('myImg01').style.top
+  clearInterval(myGun02)
+  myGun02 = setInterval(function(){
+     document.getElementById('myBullet02').style.left = parseInt(document.getElementById('myBullet02').style.left) + 10 + 'px'
+     myCheckHit() 
+  }, 20)   // speed of bullet faster lower number
+}
+
+
+  // Bullet Number 4
+if (myShooting == 4){
+  myShooting += 1
+  document.getElementById('myBullet02').style.left = document.getElementById('myImg01').style.left
+  document.getElementById('myBullet02').style.top  = document.getElementById('myImg01').style.top
+  clearInterval(myGun02)
+  myGun02 = setInterval(function(){
+     document.getElementById('myBullet02').style.left = parseInt(document.getElementById('myBullet02').style.left) + 10 + 'px'
+     myCheckHit() 
+  }, 20)   // speed of bullet faster lower number
+}
+
+
+  // Bullet Number 3
+if (myShooting == 3){
+  myShooting += 1
+  document.getElementById('myBullet02').style.left = document.getElementById('myImg01').style.left
+  document.getElementById('myBullet02').style.top  = document.getElementById('myImg01').style.top
+  clearInterval(myGun02)
+  myGun02 = setInterval(function(){
+     document.getElementById('myBullet02').style.left = parseInt(document.getElementById('myBullet02').style.left) + 10 + 'px'
+     myCheckHit() 
+  }, 20)   // speed of bullet faster lower number
+}
 
 
 
@@ -180,14 +269,18 @@ if (myShooting == 1){
 
 
 
-<img id="myImg01" src="myImgNew.jpg"  style="position:absolute; width:100px; height:80px; left: 10px; top:190px;">
-<img id="myImg02" src="myImgNew.jpg"  style="position:absolute; width:100px; height:80px; left:350px; top:190px;">
-<img id="myImg03" src="myImgNew.jpg"  style="position:absolute; width:100px; height:80px; left:500px; top:190px;">
-<img id="myImg04" src="myImgNew.jpg"  style="position:absolute; width:100px; height:80px; left:500px; top:400px;">
+<img id="myImg01" src="myCharacter.jpg"  style="position:absolute; width:100px; height:80px; left: 10px; top:190px;">
+<img id="myImg02" src="myCharacter.jpg"  style="position:absolute; width:100px; height:80px; left:350px; top:190px;">
+<img id="myImg03" src="myCharacter.jpg"  style="position:absolute; width:100px; height:80px; left:500px; top:290px;">
+<img id="myImg04" src="myCharacter.jpg"  style="position:absolute; width:100px; height:80px; left:500px; top:390px;">
 
 
-<img id="myBullet01" src="myImgNew.jpg"  style="position:absolute; width:10px; height:10px; left: 130px; top:190px;">
-<img id="myBullet02" src="myImgNew.jpg"  style="position:absolute; width:10px; height:10px; left: 150px; top:190px;">
+<img id="myBullet01" src="myBullet.png"  style="position:absolute; width:10px; height:10px; left: -100px; top:50px;">
+<img id="myBullet02" src="myBullet.png"  style="position:absolute; width:10px; height:10px; left: -100px; top:50px;">
+<img id="myBullet03" src="myBullet.png"  style="position:absolute; width:10px; height:10px; left: -100px; top:50px;">
+<img id="myBullet04" src="myBullet.png"  style="position:absolute; width:10px; height:10px; left: -100px; top:50px;">
+<img id="myBullet05" src="myBullet.png"  style="position:absolute; width:10px; height:10px; left: -100px; top:50px;">
+<img id="myBullet06" src="myBullet.png"  style="position:absolute; width:10px; height:10px; left: -100px; top:50px;">
 
 
 
